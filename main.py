@@ -1,35 +1,28 @@
 import tkinter as tk
 import tkinter.font as tkFont
-from tkinter import X, Y
 
 
-def clickBtnOne():
-    labelResult["text"] = "This bus has the average rating of : 1"
-
-
-def clickBtnTwo():
-    labelResult["text"] = "This bus has the average rating of : 2"
-
-
-def clickBtnThree():
-    labelResult["text"] = "This bus has the average rating of : 3"
-
-
-def clickBtnFour():
-    labelResult["text"] = "This bus has the average rating of : 4"
-
-
-def clickBtnFive():
-    labelResult["text"] = "This bus has the average rating of : 5"
+# sets the text as a response
+def click(x):
+    if x == 1:
+        labelResult["text"] = "This bus has the average rating of : 1"
+    if x == 2:
+        labelResult["text"] = "This bus has the average rating of : 2"
+    if x == 3:
+        labelResult["text"] = "This bus has the average rating of : 3"
+    if x == 4:
+        labelResult["text"] = "This bus has the average rating of : 4"
+    if x == 5:
+        labelResult["text"] = "This bus has the average rating of : 5"
 
 
 root = tk.Tk()
 # setting title
 root.title("Cleanliness Rater")
 
-
 # setting height of the panel
 width = 600
+# setting width of the panel
 height = 144
 # retrieve the screen width info
 screenwidth = root.winfo_screenwidth()
@@ -41,7 +34,8 @@ root.geometry(alignstr)
 
 # resize the screen
 root.resizable(width=True, height=True)
-root.grid_rowconfigure(3, weight=1)
+
+# setting row in the panel
 root.grid_rowconfigure(3, weight=1)
 
 # Header Label
@@ -53,6 +47,7 @@ labelHeader["justify"] = "center"
 labelHeader["text"] = "Rate the cleanliness of the bus"
 labelHeader.place(relx=0.5, rely=0.2, anchor='s')
 
+# response label
 labelResult = tk.Label(root)
 ft = tkFont.Font(family='Arial', size=12)
 labelResult["font"] = ft
@@ -62,7 +57,6 @@ labelResult.place(x=90, y=90, width=282, height=30)
 labelResult.grid(row=3, column=2)
 labelResult.place(relx=0.5, rely=0.5, anchor="n")
 
-
 # Button One
 btnOne = tk.Button(root)
 btnOne["bg"] = "#efefef"
@@ -71,7 +65,7 @@ btnOne["font"] = ft
 btnOne["fg"] = "#000000"
 btnOne["justify"] = "center"
 btnOne["text"] = "1"
-btnOne["command"] = clickBtnOne()
+btnOne["command"] = lambda: click(1)
 
 btnOne.place(relx=0.3, rely=0.3, anchor="n")
 
@@ -83,7 +77,7 @@ btnTwo["font"] = ft
 btnTwo["fg"] = "#000000"
 btnTwo["justify"] = "center"
 btnTwo["text"] = "2"
-btnTwo["command"] = clickBtnTwo()
+btnTwo["command"] = lambda: click(2)
 btnTwo.place(relx=0.4, rely=0.3, anchor="n")
 # Button Three
 btnThree = tk.Button(root)
@@ -94,7 +88,7 @@ btnThree["font"] = ft
 btnThree["fg"] = "#000000"
 btnThree["justify"] = "center"
 btnThree["text"] = "3"
-btnThree["command"] = clickBtnThree()
+btnThree["command"] = lambda: click(3)
 btnThree.place(relx=0.5, rely=0.3, anchor="n")
 
 # Button Four
@@ -105,7 +99,7 @@ btnFour["font"] = ft
 btnFour["fg"] = "#000000"
 btnFour["justify"] = "center"
 btnFour["text"] = "4"
-btnFour["command"] = clickBtnFour()
+btnFour["command"] = lambda: click(4)
 btnFour.place(relx=0.6, rely=0.3, anchor="n")
 
 # Button Five
@@ -116,7 +110,7 @@ btnFive["font"] = ft
 btnFive["fg"] = "#000000"
 btnFive["justify"] = "center"
 btnFive["text"] = "5"
-btnFive["command"] = clickBtnFive()
+btnFive["command"] = lambda: click(5)
 btnFive.place(relx=0.7, rely=0.3, anchor="n")
 
 root.mainloop()
