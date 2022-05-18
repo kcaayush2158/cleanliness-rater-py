@@ -81,7 +81,7 @@ labelLeft["fg"] = "#333333"
 labelLeft["justify"] = "center"
 # adding text
 labelLeft["text"] = ":-("
-# positing  the button in the panel
+# positing  the left label in the panel
 labelLeft.place(relx=0.2, rely=0.3, anchor="n")
 
 
@@ -96,13 +96,13 @@ labelRight["fg"] = "#333333"
 labelRight["justify"] = "center"
 # adding text
 labelRight["text"] = ":-)"
-# positing  the button in the panel
+# positing  the right label in the panel
 labelRight.place(relx=0.8, rely=0.3, anchor="n")
 
 
 # Button One
 btnOne = tk.Button(root)
-
+# Background color
 btnOne["bg"] = "#efefef"
 # adding the fonts
 ft = tkFont.Font(family='Arial', size=10)
